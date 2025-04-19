@@ -1,5 +1,5 @@
 import streamlit as st
-from ehr_write import auth, chief_complaints, soap_notes, medications, referrals, view_patient, clinical_data, scheduling, "Create Patient Record", "Create Doctor Record"
+from ehr_write import auth, chief_complaints, soap_notes, medications, referrals, view_patient, clinical_data, scheduling, Create_Patient, Create_Doctor
 
 st.set_page_config(page_title="EHR Platform")
 
@@ -28,5 +28,9 @@ if user:
         scheduling.render()
     elif module == "View Patient Record":
         view_patient.render()
+    elif module == "Create Patient Record":
+        create_patient.render()
+    elif module == "Create Doctor Record":
+        create_doctor.render()
 else:
     st.warning("Please log in to continue.")
