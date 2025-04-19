@@ -1,5 +1,5 @@
 import streamlit as st
-from ehr_write import auth, chief_complaints, soap_notes, medications, referrals, view_patient, clinical_data, scheduling
+from ehr_write import auth, chief_complaints, soap_notes, medications, referrals, view_patient, clinical_data, scheduling, Create Patient Record, Create Doctor Record
 
 st.set_page_config(page_title="EHR Platform")
 
