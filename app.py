@@ -1,7 +1,7 @@
 import streamlit as st
 from ehr_write import auth, chief_complaints, soap_notes, medications, referrals, view_patient, clinical_data, scheduling, create_patient, create_doctor
 
-st.set_page_config(page_title="EHR Platform")
+st.set_page_config(page_title="Sully-EHR Platform")
 
 st.title("EHR Write & Scheduling Platform")
 
