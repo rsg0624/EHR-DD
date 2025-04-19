@@ -1,16 +1,17 @@
 import streamlit as st
-from ehr_write import auth, chief_complaints, soap_notes, medications, referrals, view_patient
+from ehr_write import auth, chief_complaints, soap_notes, medications, referrals, view_patient, clinical_data, scheduling
 
-st.set_page_config(page_title="EHR Write Prototype")
+st.set_page_config(page_title="EHR Platform")
 
-st.title("EHR Write Prototype")
+st.title("EHR Write & Scheduling Platform")
 
 user = auth.login()
 
 if user:
     st.sidebar.success(f"Logged in as {user}")
     module = st.sidebar.radio("Select Module", [
-        "Chief Complaints", "SOAP Notes", "Medications", "Referrals", "View Patient Record"
+        "Chief Complaints", "SOAP Notes", "Medications", "Referrals",
+        "Clinical Data", "Scheduling", "View Patient Record"
     ])
 
     if module == "Chief Complaints":
@@ -21,6 +22,10 @@ if user:
         medications.render()
     elif module == "Referrals":
         referrals.render()
+    elif module == "Clinical Data":
+        clinical_data.render()
+    elif module == "Scheduling":
+        scheduling.render()
     elif module == "View Patient Record":
         view_patient.render()
 else:
