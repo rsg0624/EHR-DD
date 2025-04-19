@@ -11,7 +11,7 @@ if user:
     st.sidebar.success(f"Logged in as {user}")
     module = st.sidebar.radio("Select Module", [
         "Chief Complaints", "SOAP Notes", "Medications", "Referrals",
-        "Clinical Data", "Scheduling", "View Patient Record"
+        "Clinical Data", "Scheduling", "View Patient Record" "Create Patient Record", "Create Doctor Record"
     ])
 
     if module == "Chief Complaints":
