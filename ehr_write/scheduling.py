@@ -21,9 +21,13 @@ def render():
     search_phone = st.text_input("Search by Phone")
     search_name = st.text_input("Search by Name")
 
-    [found_patients = [p for p in patients if 
-    (search_phone and search_phone in p.get("phone", "")) or
-    (search_name and search_name.lower() in p.get("name", "").lower())]
+    found_patients = [p for p in patients if 
+        (search_phone and search_phone in p.get("phone", "")) or
+        (search_name and search_name.lower() in p.get("name", "").lower())
+    ]
+
+    for p in found_patients:
+        st.markdown(f"- **{p.get('name', 'Unknown')}** ({p.get('phone', '-')})")
 
     st.subheader("Create New Appointment")
     patient_id = st.selectbox("Select Patient", [p["id"] for p in patients])
